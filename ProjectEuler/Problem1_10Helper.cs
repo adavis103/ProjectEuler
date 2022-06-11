@@ -24,4 +24,11 @@ public class Problem1_10Helper
         long prime = MathHelper.LargestPrimeFactor(n);
         return "The largest prime factor of " + n + " is " + prime;
     }
+
+    // Problem 4
+    public static string Problem4(int digits)
+    {
+        int palindrome = MathHelper.MaxPalindrome(digits);
+        return "The largest palindrome made from two " + digits + "-digit numbers is " + palindrome;
+    }
 }
