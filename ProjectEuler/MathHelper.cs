@@ -47,4 +47,49 @@ public class MathHelper
 
         return n;
     }
+    public static int MaxPalindrome(int digits)
+    {
+        int upperBound = (int)Math.Pow(10,digits);
+        int lowerBound = (int)Math.Pow(10,digits-1);
+        int maxProduct = 0;
+
+        for (int i = upperBound - 1;  i >= lowerBound; i--)
+        {
+            // Break if all further numbers will be less than current max palindrome
+            if (i * i < maxProduct)
+            {
+                break;
+            }
+
+            for (int j = i; j >= lowerBound; j--)
+            {
+                int product = i*j;
+
+                if (IsPalindrome(product) && product > maxProduct) 
+                {
+                    maxProduct = product;
+                }
+            }
+        }
+
+        return maxProduct;
+    }
+
+    public static bool IsPalindrome(int n)
+    {
+        string number = Convert.ToString(n);
+        bool result = true;
+
+        // Compare every number except middle (if odd # of digits)
+        for (int i = 0; i < number.Length / 2; i++)
+        {
+            if (number[i] != number[number.Length-i-1]) 
+            {
+                result = false;
+                break; 
+            }
+        }
+
+        return result;
+    }
 }
