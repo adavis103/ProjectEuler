@@ -10,4 +10,11 @@ public class Problem1_10Helper
         int multiplesOf15 = MathHelper.SumMultiplesOfX(15,upperBound);  //need to remove one set of double-counted multiples
         return "The sum of multiples of 3 and 5 between 1 and " + upperBound + " is " + (multiplesOf3 + multiplesOf5 - multiplesOf15);
     }
+
+    // Problem 2
+    public static string Problem2(int upperBound)
+    {
+        int sum = MathHelper.SumEvenFibonacci(upperBound);
+        return "The sum of the even-valued Fibonacci sequence terms below " + upperBound + " is " + sum;
+    }
 }
