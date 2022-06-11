@@ -17,4 +17,11 @@ public class Problem1_10Helper
         int sum = MathHelper.SumEvenFibonacci(upperBound);
         return "The sum of the even-valued Fibonacci sequence terms below " + upperBound + " is " + sum;
     }
+
+    // Problem 3
+    public static string Problem3(long n)
+    {
+        long prime = MathHelper.LargestPrimeFactor(n);
+        return "The largest prime factor of " + n + " is " + prime;
+    }
 }
