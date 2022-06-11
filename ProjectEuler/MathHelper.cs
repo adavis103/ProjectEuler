@@ -34,4 +34,17 @@ public class MathHelper
         
         return sum;
     }
+
+    public static long LargestPrimeFactor(long n)
+    {
+        for (int i = 2; i < n; i++)
+        {
+            while (n % i == 0)
+            {
+                n /= i;
+            }
+        }
+
+        return n;
+    }
 }
